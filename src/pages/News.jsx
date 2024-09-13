@@ -29,10 +29,10 @@ export class News extends Component {
               return (
                 <div className="col-4 my-3" key={ietm.url}>
                   <NewsItem
-                    title={ietm.title ? ietm.title : "No title available"}
+                    title={ietm.title ? ietm.title.slice(0, 45) : "No title available"}
                     description={
                       ietm.description
-                        ? ietm.description
+                        ? ietm.description.slice(0, 88)
                         : "No description available"
                     }
                     urlToImage={
