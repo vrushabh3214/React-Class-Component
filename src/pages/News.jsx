@@ -1,9 +1,8 @@
-import { Component  } from "react";
+import { Component } from "react";
 import NewsItem from "./NewsItem";
 
 export class News extends Component {
-
-articles = []
+  articles = [];
 
   constructor() {
     super();
@@ -29,7 +28,20 @@ articles = []
             {this.state.articles.map((ietm) => {
               return (
                 <div className="col-4 my-3" key={ietm.url}>
-                  <NewsItem title={ietm.title} description={ietm.description} urlToImage={!ietm.urlToImage ?"https://cdn.arstechnica.net/wp-content/uploads/2023/11/encryption-key-recovery-attack-760x380.jpg":ietm.urlToImage }/>
+                  <NewsItem
+                    title={ietm.title ? ietm.title : "No title available"}
+                    description={
+                      ietm.description
+                        ? ietm.description
+                        : "No description available"
+                    }
+                    urlToImage={
+                      !ietm.urlToImage
+                        ? "https://cdn.arstechnica.net/wp-content/uploads/2023/11/encryption-key-recovery-attack-760x380.jpg"
+                        : ietm.urlToImage
+                    }
+                    url={ietm.url}
+                  />
                 </div>
               );
             })}
