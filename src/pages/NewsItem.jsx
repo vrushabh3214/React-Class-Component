@@ -1,5 +1,4 @@
 import { Component } from "react";
-// import "bootstrap/dist/css/bootstrap.min.css";
 
 export class NewsItem extends Component {
   render() {
